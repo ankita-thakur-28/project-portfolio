@@ -14,7 +14,6 @@
 
 <body>
 
-
     <nav class="navbar">
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
@@ -24,7 +23,6 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-
 
     <section id="home" class="hero">
         <h1>Ankita Kumari</h1>
@@ -45,20 +43,18 @@
             <div class="about-text">
                 <h2>About Me</h2>
                 <p>
-                    I'm Ankita Kumari, a focused and hardworking MCA student who believes small details create strong
-                    technology. With an ISTQB mindset and hands-on web development skills, I enjoy building things that
-                    not
-                    only look good but work right.
+                     
                 </p>
-                <a href="./Ankita_Kumari_CV.pdf" download>
-                    <button class="btn">Download CV</a>
+                <a href="./Ankita_Kumari_CV.pdf" download class="btn">
+                    Download CV</a>
             </div>
 
         </div>
-    </section>
+    </section>  
 
 
     <!-- SKILLS -->
+
     <section id="skills" class="skills">
         <h2>My Skills</h2>
 
@@ -90,6 +86,7 @@
     </section>
 
     <!-- PROJECTS -->
+
     <section id="projects" class="projects">
         <h2>My Projects</h2>
 
@@ -105,7 +102,7 @@
                     <p>Calculator built using HTML, CSS, and JavaScript.</p>
 
                     <div class="project-buttons">
-                        <a href="https://github.com/ankita-thakur-28/calculator-app" target="_blank"
+                        <a href="https://ankita-thakur-28.github.io/calculator-app/" target="_blank"
                             class="btn demo-btn">Live Demo</a>
                         <a href="https://github.com/ankita-thakur-28/calculator-app.git" target="_blank"
                             class="btn github-btn">GitHub</a>
@@ -123,8 +120,9 @@
                     <p>An image generation project that creates visuals based on user input.</p>
 
                     <div class="project-buttons">
-                        <a href="" class="btn demo-btn">Live Demo</a>
-                        <a href="https://github.com/ankita-thakur-28/image-creator.git"
+                        <a href="https://ankita-thakur-28.github.io/image-creator/" target="_blank"
+                         class="btn demo-btn">Live Demo</a>
+                        <a href="https://github.com/ankita-thakur-28/image-creator.git" target="_blank"
                             class="btn github-btn">GitHub</a>
                     </div>
                 </div>
@@ -133,16 +131,16 @@
         </div>
     </section>
 
-    <!-- CONTACT -->
+  <!-- contact -->
 
     <section id="contact" class="contact">
         <h2>Contact Me</h2>
 
         <div class="contact-container">
             <form id="contactForm">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <textarea id="message" placeholder="Your Message" required></textarea>
                 <button type="submit" class="btn">Send Message</button>
                 <p id="formMessage" class="form-message"></p>
             </form>
@@ -150,6 +148,7 @@
     </section>
 
     <!-- FOOTER -->
+
     <footer class="footer">
         <div class="footer-socials">
             <a href="https://github.com/ankita-thakur-28" target="_blank">

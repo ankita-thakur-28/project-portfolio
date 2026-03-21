@@ -1,3 +1,5 @@
+const BASE_URL = "http://localhost:8083"
+
 function scrollToProject() {
     const projectSection = document.getElementById("projects");
 
@@ -6,7 +8,7 @@ function scrollToProject() {
             behavior: "smooth"
         });
     }
-    
+
 }
 
 
@@ -15,7 +17,7 @@ const contactForm = document.getElementById("contactForm");
 const formMessage = document.getElementById("formMessage");
 
 
-contactForm.addEventListener("submit", function (event) {
+contactForm.addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const name = document.getElementById("name").value.trim();
@@ -24,16 +26,36 @@ contactForm.addEventListener("submit", function (event) {
 
     if (name === "" || email === "" || message === "") {
         formMessage.textContent = "Please fill in all fields!";
-         return;
+        formMessage.style.color = "red";
+        return;
     }
 
-    formMessage.textContent = "Sending...";
-    formMessage.style.color = "green";
+    const data = {
+        name,
+        email,
+        message
+    }
 
-    setTimeout(() => {
-        formMessage.textContent = "Thank you! Your message has been sent.";
-        contactForm.reset();
-    }, 1500);
+    const dataPacket = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+    };
+
+    let URL = BASE_URL + "/api/add-contact";
+
+    try {
+        const response = await fetch(URL, dataPacket);
+
+        const data = await response.json();
+
+        console.log("saved:", data);
+
+    } catch (error) {
+        console.log("Error", error)
+    }
+
 });
 
-contactForm.addEventListener("submit", handleSubmit);
