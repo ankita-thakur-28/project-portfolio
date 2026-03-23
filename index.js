@@ -1,5 +1,5 @@
 // const BASE_URL = "http://localhost:8083"
-const BASE_URL = "https://portfolio-backend-1-259l.onrender.com"
+const BASE_URL = "https://portfolio-backend-0ekp.onrender.com"
 
 function scrollToProject() {
     const projectSection = document.getElementById("projects");
