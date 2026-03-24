@@ -8,8 +8,9 @@
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -26,9 +27,7 @@
 
     <section id="home" class="hero">
         <h1>Ankita Kumari</h1>
-        <p>Aspiring Web Developer</p>
-        <button onclick="scrollToProject()">
-            View My Work
+        <p class="hero-tagline">Software Developer &nbsp;·&nbsp; ISTQB Certified &nbsp;·&nbsp; MCA Student</p>
         </button>
     </section>
 
@@ -49,7 +48,7 @@
                     JavaScript, allowing me to understand applications end-to-end.
                     <br>
                     <br>
-                    
+
                     I enjoy building, testing, and improving systems with a focus on quality, performance, and
                     reliability. With a blend of technical skills and a detail-oriented mindset, I’m always eager to
                     learn, adapt, and contribute to impactful tech solutions.
@@ -104,17 +103,21 @@
 
             <div class="project-card">
                 <div class="project-icon">
-                    <i class="fas fa-calculator"></i>
+                <i class="fas fa-hand-back-fist"></i> 
                 </div>
 
                 <div class="project-info">
-                    <h3>Calculator App</h3>
-                    <p>Calculator built using HTML, CSS, and JavaScript.</p>
+                    <h3>Rock Paper Scissors</h3>
+                    <p>A fun interactive game built with clean UI and smooth game logic.</p>
+                    <div class="project-tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                </div>
 
                     <div class="project-buttons">
-                        <a href="https://ankita-thakur-28.github.io/calculator-app/" target="_blank"
-                            class="btn demo-btn">Live Demo</a>
-                        <a href="https://github.com/ankita-thakur-28/calculator-app.git" target="_blank"
+                        <a href="https://github.com/ankita-thakur-28/rock-paper-scissors-v1.git" target="_blank" class="btn demo-btn">Live Demo</a>
+                        <a href="" target="_blank"
                             class="btn github-btn">GitHub</a>
                     </div>
                 </div>
@@ -128,6 +131,12 @@
                 <div class="project-info">
                     <h3>Image Creator</h3>
                     <p>An image generation project that creates visuals based on user input.</p>
+                    <div class="project-tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">API</span>
+                </div>
 
                     <div class="project-buttons">
                         <a href="https://ankita-thakur-28.github.io/image-creator/" target="_blank"
@@ -173,8 +182,9 @@
         <p>&copy; 2026 Ankita Kumari. All Rights Reserved.</p>
     </footer>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.5/sweetalert2.all.min.js"></script>
     <script src="index.js"></script>
+    
 </body>
 
 </html>

@@ -30,6 +30,11 @@ contactForm.addEventListener("submit", async function (event) {
         formMessage.style.color = "red";
         return;
     }
+     formMessage.textContent = "";
+
+     const submitBtn = contactForm.querySelector("button[type='submit']");
+     submitBtn.textContent = "Sending...";
+     submitBtn.disabled = true;
 
     const data = {
         name,
@@ -50,13 +55,46 @@ contactForm.addEventListener("submit", async function (event) {
     try {
         const response = await fetch(URL, dataPacket);
 
-        const data = await response.json();
+        if (!response.ok) {
+            throw new Error("Server error");
+        }
 
-        console.log("saved:", data);
+        const result = await response.json();
+        console.log("saved:", result);
+
+        submitBtn.textContent = "Send Message";
+        submitBtn.disabled = false;
+
+        contactForm.reset();
+
+        //sweet alert
+        Swal.fire({
+            icon: "success",
+            title: "Message Sent! 🎉",
+            text: "Thanks for reaching out, I'll get back to you soon!",
+            confirmButtonText: "Awesome!",
+            confirmButtonColor: "#2563eb",
+            timer: 4000,
+            timerProgressBar: true,
+            showClass: {
+                popup: "animate__animated animate__fadeInDown"
+            },
+            hideClass: {
+                popup: "animate__animated animate__fadeOutUp"
+            }
+        });
 
     } catch (error) {
         console.log("Error", error)
-    }
 
+        submitBtn.textContent = "Send Message";
+        submitBtn.disabled = false;
+
+        formMessage.textContent = "⚠️ Something went wrong. Please try again or email me directly.";
+        formMessage.style.color = "#dc2626";
+    }
 });
+
+
+
 

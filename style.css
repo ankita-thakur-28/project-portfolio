@@ -240,6 +240,7 @@ body {
 }
 
 /* PROJECT SECTION */
+/* PROJECT SECTION */
 .projects {
     padding: 80px 10%;
     background-color: #f8fafc;
@@ -247,107 +248,141 @@ body {
 }
 
 .projects h2 {
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 32px;
-    margin-bottom: 50px;
+    margin-bottom: 8px;
     color: #1e293b;
-    position: relative;
 }
 
 .projects h2::after {
     content: "";
     display: block;
-    width: 90%;
+    width: 200px;
     height: 2px;
-    background: #cbd5e1;
-    margin: 10px auto 0;
+    background: #6b92e6;
+    margin: 10px auto 50px;
     border-radius: 2px;
 }
 
 .projects-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    max-width: 1200px;
+    max-width: 1000px;
     margin: auto;
-    gap: 40px;
-}
-
-/* project layout */
-.projects {
-    padding: 80px 10%;
-    background-color: #f8fafc;
-    text-align: center;
+    gap: 24px;
 }
 
 .project-card {
-    width: 100%;
-    max-width: 1100px;
-    background: #1e293b;
-    color: white;
+    background: #ffffff;
     border-radius: 16px;
-    padding: 30px 35px;
+    border: 1px solid #e2e8f0;
+    padding: 28px 24px 22px;
     display: flex;
-    align-items: center;
-    gap: 28px;
-    margin-bottom: 35px;
-    box-shadow: 0 15px 35px rgba(2, 6, 23, 0.25);
-    transition: all 0.3s ease;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* gradient top accent bar — Style A */
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, #2563eb, #7c3aed);
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.10);
 }
 
 .project-icon {
-    min-width: 80px;
-    height: 80px;
-    background: rgba(255, 255, 255, 0.12);
-    border-radius: 14px;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #eff6ff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 38px;
-}
-
-.project-info {
-    text-align: left;
+    font-size: 22px;
+    color: #2563eb;
 }
 
 .project-info h3 {
-    font-size: 22px;
-    margin-bottom: 8px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0;
 }
 
 .project-info p {
-    font-size: 15px;
-    font-weight: 400;
-    color: #e5e7eb;
-    margin-bottom: 18px;
-    max-width: 600px;
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* TECH TAGS */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tag {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: #eff6ff;
+    color: #1e40af;
+    border: 1px solid #bfdbfe;
 }
 
 /* BUTTONS */
 .project-buttons {
     display: flex;
-    gap: 16px;
-}
-
-.btn {
-    padding: 8px 18px;
-    border-radius: 8px;
-    font-size: 14px;
-    text-decoration: none;
-    color: white;
+    gap: 10px;
+    margin-top: 4px;
 }
 
 .demo-btn {
-    background: #f95757;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    background: #1e3a8a;
+    color: white;
+    text-decoration: none;
+    border: none;
 }
 
 .github-btn {
-    background: #2563eb;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    background: transparent;
+    color: #1e3a8a;
+    text-decoration: none;
+    border: 1.5px solid #1e3a8a;
 }
 
-.btn:hover {
-    opacity: 0.85;
+.demo-btn:hover {
+    background: #1e40af;
+    opacity: 1;
 }
 
+.github-btn:hover {
+    background: #eff6ff;
+    opacity: 1;
+}
 /* CONTACT SECTION */
 .contact {
     padding: 90px 10%;
@@ -366,7 +401,7 @@ body {
 .contact h2::after {
     content: "";
     display: block;
-    width: 165px;
+    width: 180px;
     height: 2px;
     background: #93afeb;
     margin: 10px auto 20px;
@@ -501,4 +536,16 @@ body {
     background: #1e40af;
 }
 
+#backToTop:hover {
+    background: #1e40af;
+    transform: translateY(-3px);
+}
 
+.hero-tagline {
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 10px;
+    text-transform: uppercase;
+}
