@@ -93,8 +93,34 @@ contactForm.addEventListener("submit", async function (event) {
         formMessage.textContent = "⚠️ Something went wrong. Please try again or email me directly.";
         formMessage.style.color = "#dc2626";
     }
+    });
+
+// CUSTOM CURSOR
+const cursorDot = document.querySelector('.cursor-dot');
+const cursorRing = document.querySelector('.cursor-ring');
+
+window.addEventListener('mousemove', (e) => {
+    // ✅ correct positioning using left/top not transform
+    cursorDot.style.left = e.clientX + 'px';
+    cursorDot.style.top = e.clientY + 'px';
+    cursorRing.style.left = e.clientX + 'px';
+    cursorRing.style.top = e.clientY + 'px';
 });
 
+document.querySelectorAll('a, button, .skill-pill, .project-card').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        cursorRing.style.width = '50px';
+        cursorRing.style.height = '50px';
+        cursorRing.style.opacity = '0.3';
+    });
+    el.addEventListener('mouseleave', () => {
+        cursorRing.style.width = '32px';
+        cursorRing.style.height = '32px';
+        cursorRing.style.opacity = '0.6';
+    });
+});
 
-
-
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+});

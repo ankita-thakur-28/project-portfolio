@@ -6,185 +6,292 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ankita Kumari | Portfolio</title>
 
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
+    <!-- CUSTOM CURSOR -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- NAVBAR -->
     <nav class="navbar">
+        <div class="nav-logo">AK<span>.</span></div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#certifications">Certifications</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <div class="nav-cta">
+            <a href="assets/Ankita_Kumari_CV.pdf" download class="btn-nav">Download CV</a>
+        </div>
     </nav>
 
+    <!-- HERO -->
     <section id="home" class="hero">
-        <h1>Ankita Kumari</h1>
-        <p class="hero-tagline">Software Developer &nbsp;·&nbsp; ISTQB Certified &nbsp;·&nbsp; MCA Student</p>
-        </button>
-    </section>
-
-
-    <section id="about" class="about">
-        <div class="about-container">
-
-            <div class="about-image">
-                <img src="./img-1.jpeg" alt="Profile">
+        <div class="hero-bg-text">DEVELOPER</div>
+        <div class="hero-content">
+            <p class="hero-greeting">Hello, I'm</p>
+            <h1 class="hero-name">Ankita<br><span>Kumari</span></h1>
+            <p class="hero-tagline">SOFTWARE DEVELOPER &nbsp;·&nbsp; ISTQB CERTIFIED &nbsp;·&nbsp; MCA STUDENT</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn-primary" onclick="scrollToProject()">View My Work</a>
+                <a href="#contact" class="btn-outline">Get In Touch</a>
             </div>
+        </div>
+        <div class="hero-image-wrap">
+            <div class="hero-image-ring"></div>
+            <div class="hero-image-ring ring2"></div>
 
-            <div class="about-text">
-                <h2>About Me</h2>
-                <p>
-                    Hi, I’m Ankita Kumari — a passionate MCA student with a strong foundation in both development and
-                    software testing. I’m ISTQB certified and bring hands-on experience through projects where I’ve
-                    worked with Java, Spring Boot, SQL, and Docker. I also have working knowledge of HTML, CSS, and
-                    JavaScript, allowing me to understand applications end-to-end.
-                    <br>
-                    <br>
-
-                    I enjoy building, testing, and improving systems with a focus on quality, performance, and
-                    reliability. With a blend of technical skills and a detail-oriented mindset, I’m always eager to
-                    learn, adapt, and contribute to impactful tech solutions.
-
-                </p>
-                <a href="assets/Ankita_Kumari_CV.pdf" download class="btn">
-                    Download CV</a>
-            </div>
-
+            <img src="./img-1.jpeg" alt="Ankita Kumari" class="hero-img">
+        </div>
+        <div class="scroll-hint">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
         </div>
     </section>
 
+    <!-- ABOUT -->
+    <section id="about" class="about" data-aos="fade-up">
+        <div class="section-label">01 — About</div>
+        <div class="about-container">
+            <div class="about-left">
+                <h2 class="section-title">Crafting code with<br><em>purpose & precision</em></h2>
+                <div class="about-stats">
+                    <div class="stat">
+                        <span class="stat-num">3+</span>
+                        <span class="stat-label">Projects Built</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">1</span>
+                        <span class="stat-label">Certification</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">9+</span>
+                        <span class="stat-label">Technologies</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-right">
+                <p class="about-body">
+                    Hi, I'm Ankita Kumari — a passionate MCA student with a strong foundation in both development and
+                    software testing. I'm <strong>ISTQB certified</strong> and bring hands-on experience through
+                    projects where I've
+                    worked with <strong>Java</strong>, <strong>Spring Boot</strong>, <strong>SQL</strong>, and
+                    <strong>Docker</strong>. I also have working knowledge of
+                    <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>, allowing me to
+                    understand applications end-to-end.
+                </p>
+                <p class="about-body">
+                    I enjoy building, testing, and improving systems with a focus on quality, performance, and
+                    reliability. With a blend of technical skills and a detail-oriented mindset, I'm always eager to
+                    learn, adapt, and contribute to impactful tech solutions.
+                </p>
+                <a href="assets/Ankita_Kumari_CV.pdf" download class="btn-primary" style="margin-top:1.5rem;">
+                    <i class="fas fa-download"></i> Download CV
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- SKILLS -->
-
-    <section id="skills" class="skills">
-        <h2>My Skills</h2>
-
-        <div class="skill-container">
-            <div class="skill-card">
-                <i class="fab fa-html5"></i>
-                <span>HTML</span>
-                <strong>85%</strong>
-            </div>
-
-            <div class="skill-card">
-                <i class="fab fa-css3-alt"></i>
-                <span>CSS</span>
-                <strong>85%</strong>
-            </div>
-
-            <div class="skill-card">
-                <i class="fab fa-js"></i>
-                <span>JavaScript</span>
-                <strong>80%</strong>
-            </div>
-
-            <div class="skill-card">
-                <i class="fab fa-git-alt"></i>
-                <span>Git</span>
-                <strong>85%</strong>
+    <section id="skills" class="skills" data-aos="fade-up">
+        <div class="section-label">02 — Skills</div>
+        <h2 class="section-title">My Tech Stack</h2>
+        <div class="skills-grid">
+            <div class="skill-pill" data-aos="zoom-in" data-aos-delay="50">☕ <span>Java</span></div>
+            <div class="skill-pill" data-aos="zoom-in" data-aos-delay="100">🍃 <span>Spring Boot</span></div>
+            <div class="skill-pill" data-aos="zoom-in" data-aos-delay="150">🐳 <span>Docker</span></div>
+            <div class="skill-pill" data-aos="zoom-in" data-aos-delay="200">🗄️ <span>SQL</span></div>
+            <div class="skill-pill" data-aos="zoom-in" data-aos-delay="250">📬 <span>Brevo API</span></div>
+            <div class="skill-pill" data-aos="zoom-in" data-aos-delay="300">🌐 <span>HTML / CSS</span></div>
+            <div class="skill-pill" data-aos="zoom-in" data-aos-delay="350">📜 <span>JavaScript</span></div>
+            <div class="skill-pill" data-aos="zoom-in" data-aos-delay="400">🔧 <span>Git</span></div>
+            <div class="skill-pill" data-aos="zoom-in" data-aos-delay="400">✅ <span>ISTQB Certified</span>
             </div>
         </div>
     </section>
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="certifications" data-aos="fade-up">
+        <div class="section-label">03 — Certifications</div>
+        <h2 class="section-title">My Credentials</h2>
 
-    <!-- PROJECTS -->
+        <div class="cert-grid">
 
-    <section id="projects" class="projects">
-        <h2>My Projects</h2>
-
-        <div class="projects-container">
-
-            <div class="project-card">
-                <div class="project-icon">
-                <i class="fas fa-hand-back-fist"></i> 
-                </div>
-
-                <div class="project-info">
-                    <h3>Rock Paper Scissors</h3>
-                    <p>A fun interactive game built with clean UI and smooth game logic.</p>
-                    <div class="project-tags">
-                    <span class="tag">HTML</span>
-                    <span class="tag">CSS</span>
-                    <span class="tag">JavaScript</span>
-                </div>
-
-                    <div class="project-buttons">
-                        <a href="https://github.com/ankita-thakur-28/rock-paper-scissors-v1.git" target="_blank" class="btn demo-btn">Live Demo</a>
-                        <a href="" target="_blank"
-                            class="btn github-btn">GitHub</a>
+            <div class="cert-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="cert-icon">🏆</div>
+                <div class="cert-body">
+                    <div class="cert-badge">ISTQB</div>
+                    <h3 class="cert-title">Certified Tester Foundation Level</h3>
+                    <p class="cert-org">International Software Testing Qualifications Board</p>
+                    <p class="cert-desc">Internationally recognised certification covering software testing
+                        fundamentals, test design techniques, and quality assurance best practices.</p>
+                    <div class="cert-tags">
+                        <span class="tag">Software Testing</span>
+                        <span class="tag">QA</span>
+                        <span class="tag">Test Design</span>
                     </div>
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="project-icon">
-                    <i class="fas fa-image"></i>
+            <div class="cert-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="cert-icon">📮</div>
+                <div class="cert-body">
+                    <div class="cert-badge">Postman</div>
+                    <h3 class="cert-title">Postman API Fundamentals Student Expert</h3>
+                    <p class="cert-org">Postman</p>
+                    <p class="cert-desc">Hands-on certification demonstrating proficiency in API testing, building
+                        requests, writing test scripts, and working with REST APIs using Postman.</p>
+                    <div class="cert-tags">
+                        <span class="tag">API Testing</span>
+                        <span class="tag">REST</span>
+                        <span class="tag">Postman</span>
+                    </div>
                 </div>
+            </div>
 
-                <div class="project-info">
-                    <h3>Image Creator</h3>
-                    <p>An image generation project that creates visuals based on user input.</p>
-                    <div class="project-tags">
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects" data-aos="fade-up">
+        <div class="section-label">03 — Projects</div>
+        <h2 class="section-title">Things I've Built</h2>
+
+        <div class="projects-grid">
+
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-card-top">
+                    <div class="project-num">01</div>
+                    <div class="project-links">
+                        <a href="https://ankita-thakur-28.github.io/rock-paper-scissors-v1/" target="_blank"
+                            title="Live Demo"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://github.com/ankita-thakur-28/rock-paper-scissors-v1.git" target="_blank"
+                            title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="project-icon-wrap">✊</div>
+                <h3 class="project-title">Rock Paper Scissors</h3>
+                <p class="project-desc">A fun interactive browser game with smooth animations, score tracking, and CPU
+                    logic.</p>
+                <div class="project-tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-card-top">
+                    <div class="project-num">02</div>
+                    <div class="project-links">
+                        <a href="https://ankita-thakur-28.github.io/image-creator/" target="_blank" title="Live Demo"><i
+                                class="fas fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://github.com/ankita-thakur-28/image-creator.git" target="_blank"
+                            title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="project-icon-wrap">🖼️</div>
+                <h3 class="project-title">Image Creator</h3>
+                <p class="project-desc">An image generation project that creates visuals based on user input using an
+                    external API.</p>
+                <div class="project-tags">
                     <span class="tag">HTML</span>
                     <span class="tag">CSS</span>
                     <span class="tag">JavaScript</span>
                     <span class="tag">API</span>
                 </div>
+            </div>
 
-                    <div class="project-buttons">
-                        <a href="https://ankita-thakur-28.github.io/image-creator/" target="_blank"
-                            class="btn demo-btn">Live Demo</a>
-                        <a href="https://github.com/ankita-thakur-28/image-creator.git" target="_blank"
-                            class="btn github-btn">GitHub</a>
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-card-top">
+                    <div class="project-num">03</div>
+                    <div class="project-links">
+                        <a href="https://ankita-thakur-28.github.io/calculator-app/" target="_blank"
+                            title="Live Demo"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://github.com/ankita-thakur-28/calculator-app.git" target="_blank"
+                            title="GitHub"><i class="fab fa-github"></i></a>
                     </div>
+                </div>
+                <div class="project-icon-wrap">🧮</div>
+                <h3 class="project-title">Calculator App</h3>
+                <p class="project-desc">A clean, fully functional calculator built with precise logic and a minimal
+                    modern UI.</p>
+                <div class="project-tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- contact -->
-
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-
+    <!-- CONTACT -->
+    <section id="contact" class="contact" data-aos="fade-up">
+        <div class="section-label">04 — Contact</div>
         <div class="contact-container">
-            <form id="contactForm">
-                <input type="text" id="name" placeholder="Your Name" required>
-                <input type="email" id="email" placeholder="Your Email" required>
-                <textarea id="message" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-                <p id="formMessage" class="form-message"></p>
-            </form>
+            <div class="contact-left">
+                <h2 class="section-title">Let's work<br><em>together</em></h2>
+                <p class="contact-sub">Have a project in mind or just want to say hi? My inbox is always open.</p>
+                <div class="contact-socials">
+                    <a href="https://github.com/ankita-thakur-28" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ankitaa-thakur" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary send-btn">
+                        Send Message <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <p id="formMessage" class="form-message"></p>
+                </form>
+            </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-
     <footer class="footer">
-        <div class="footer-socials">
-            <a href="https://github.com/ankita-thakur-28" target="_blank">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/ankitaa-thakur" target="_blank">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-        </div>
-
+        <div>
+        <p class="footer-name"></p>
         <p>&copy; 2026 Ankita Kumari. All Rights Reserved.</p>
+        </div>
     </footer>
 
+    <!-- BACK TO TOP -->
+    <button id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.5/sweetalert2.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="index.js"></script>
-    
+    <script>
+        AOS.init({ duration: 700, once: true, easing: 'ease-in-out' });
+    </script>
+
 </body>
 
 </html>
