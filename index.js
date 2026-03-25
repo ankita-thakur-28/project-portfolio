@@ -124,3 +124,11 @@ const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 50);
 });
+
+const heroName = document.querySelector('.hero-name');
+
+heroName.addEventListener('mouseenter', () => {
+  heroName.classList.remove('animate');
+  void heroName.offsetWidth; // force reflow
+  heroName.classList.add('animate');
+});
