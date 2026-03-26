@@ -168,3 +168,16 @@ window.addEventListener('scroll', () => {
         backToTop.style.display = 'none';
     }
 });
+
+// ── Certificate Flip Cards ──
+document.querySelectorAll('.cert-flip-card').forEach(card => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('flipped');
+    });
+
+    // Mobile tap support — prevent double fire
+    card.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        card.classList.toggle('flipped');
+    });
+});
