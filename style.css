@@ -445,7 +445,7 @@ body::after {
 ═══════════════════════════════════════════════ */
 .hero {
     min-height: 100vh;
-    padding: 140px 6% 80px;
+    padding: 80px 6% 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -788,13 +788,13 @@ body::after {
 }
 
 .skills .section-label {
-    text-align: left;
+    text-align: center;
     max-width: 1200px;
     margin: 0 auto 16px;
 }
 
 .skills .section-title {
-    text-align: left;
+    text-align: center;
     max-width: 1200px;
     margin: 0 auto 3rem;
 }
@@ -870,6 +870,24 @@ body::after {
 /* ═══════════════════════════════════════════════
    CERTIFICATIONS — FLIP CARDS
 ═══════════════════════════════════════════════ */
+.certifications {
+    padding: 110px 6%;          /* ensure left/right padding exists */
+    background: var(--bg2);
+    position: relative;
+}
+
+.certifications .section-label,
+.certifications .section-title {
+    max-width: 1000px;          /* match cert-flip-grid max-width */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;            /* reset any inherited padding */
+}
+
+.certifications .section-title {
+    margin-bottom: 3rem;
+}
+
 .cert-flip-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -877,12 +895,14 @@ body::after {
     max-width: 1000px;
     margin: 0 auto;
     align-items: start; /* ← stops cards stretching/dropping */
+    padding: 0%;
+    width: 100%;
 }
 
 .cert-flip-scene {
     perspective: 1200px;
     height: 280px;      /* ← fixed height, never collapses */
-    width: 90%;
+    width: 100%;
 }
 
 .cert-flip-card {
