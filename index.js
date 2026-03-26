@@ -1,24 +1,6 @@
 // const BASE_URL = "http://localhost:8083"
 const BASE_URL = "https://portfolio-backend-0ekp.onrender.com";
 
-const rippleHTML = `
-    <div class="swal-ripple-icon-wrap">
-        <div class="swal-ripple-ring"></div>
-        <div class="swal-ripple-ring"></div>
-        <div class="swal-ripple-ring"></div>
-
-        <div class="swal-ripple-center">
-            <svg viewBox="0 0 24 24">
-                <polyline points="4 12 9 17 20 6"/>
-            </svg>
-        </div>
-    </div>
-
-    <div class="swal-ripple-label">Success</div>
-    <div class="swal-ripple-divider"></div>
-`;
-
-
 function scrollToProject() {
     const projectSection = document.getElementById("projects");
 
@@ -118,11 +100,29 @@ contactForm.addEventListener("submit", async function (event) {
 
         Swal.fire({
             title: 'Message Sent',
-
             html: `
-        ${rippleHTML}
+        <div class="swal-ripple-icon-wrap">
+            <div class="swal-ripple-ring"></div>
+            <div class="swal-ripple-ring"></div>
+            <div class="swal-ripple-ring"></div>
+
+            <div class="swal-ripple-center">
+                <svg viewBox="0 0 24 24">
+                    <polyline points="4 12 9 17 20 6"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="swal-ripple-label">Success</div>
+        <div class="swal-ripple-divider"></div>
+
         <p>Thanks for reaching out — I read every message and will get back to you soon.</p>
     `,
+
+    //         html: `
+    //     ${rippleHTML}
+    //     <p>Thanks for reaching out — I read every message and will get back to you soon.</p>
+    // `,
             showClass: {
                 popup: ''   /* disable default swal animation — we handle it */
             },
@@ -137,25 +137,25 @@ contactForm.addEventListener("submit", async function (event) {
                 confirmButton: 'swal2-confirm',
                 actions: 'swal2-actions',
             },
-            confirmButtonText: 'Perfect!',
+            // confirmButtonText: 'Perfect!',
             timer: 5000,
             timerProgressBar: true,
             showConfirmButton: false,
-            allowOutsideClick: true,
+            // allowOutsideClick: true,
 
 
-            didOpen: (popup) => {
-                /* inject icon above the title inside the header */
-                const header = popup.querySelector('.swal2-header');
-                const iconWrap = popup.querySelector('.swal-ripple-icon-wrap');
-                const label = popup.querySelector('.swal-ripple-label');
-                const divider = popup.querySelector('.swal-ripple-divider');
-                if (header && iconWrap) {
-                    header.prepend(divider);
-                    header.prepend(label);
-                    header.prepend(iconWrap);
-                }
-            }
+            // didOpen: (popup) => {
+            //     /* inject icon above the title inside the header */
+            //     const header = popup.querySelector('.swal2-header');
+            //     const iconWrap = popup.querySelector('.swal-ripple-icon-wrap');
+            //     const label = popup.querySelector('.swal-ripple-label');
+            //     const divider = popup.querySelector('.swal-ripple-divider');
+            //     if (header && iconWrap) {
+            //         header.prepend(divider);
+            //         header.prepend(label);
+            //         header.prepend(iconWrap);
+            //     }
+            // }
         });
 
     } catch (error) {
