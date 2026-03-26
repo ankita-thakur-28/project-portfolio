@@ -140,7 +140,7 @@ contactForm.addEventListener("submit", async function (event) {
             confirmButtonText: 'Perfect!',
             timer: 5000,
             timerProgressBar: true,
-            showConfirmButton: true,
+            showConfirmButton: false,
             allowOutsideClick: true,
 
 
@@ -155,10 +155,6 @@ contactForm.addEventListener("submit", async function (event) {
                     header.prepend(label);
                     header.prepend(iconWrap);
                 }
-                setTimeout(() => {
-                    Swal.close();
-                }, 5000);
-
             }
         });
 
