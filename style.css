@@ -1512,6 +1512,18 @@ body::after {
     color: var(--dark);
 }
 
+@media (hover: none) {
+    body {
+        cursor: default; /* ← restores normal tap cursor on mobile */
+    }
+
+    .cursor-dot,
+    .cursor-ring {
+        display: none; /* ← hides the stuck dot/ring */
+    }
+}
+
+
 /* ═══════════════════════════════════════════════
    RESPONSIVE — TABLET (≤ 900px)
 ═══════════════════════════════════════════════ */
