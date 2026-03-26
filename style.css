@@ -1330,7 +1330,7 @@ body::after {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    align-self: flex-start;
+    /* align-self: flex-start; */
     background: transparent;
     color: var(--white);
     border: 1.5px solid rgba(201, 169, 110, 0.4);
