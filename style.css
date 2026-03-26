@@ -1325,6 +1325,7 @@ body::after {
 
 /* Send button */
 .send-btn {
+    width: 100%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
