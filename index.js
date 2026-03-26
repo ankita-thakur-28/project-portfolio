@@ -1,5 +1,14 @@
 // const BASE_URL = "http://localhost:8083"
-const BASE_URL = "https://portfolio-backend-0ekp.onrender.com"
+const BASE_URL = "https://portfolio-backend-0ekp.onrender.com";
+
+const rippleHTML = `
+  <div class="swal-ripple-icon-wrap">
+      <div class="ripple"></div>
+  </div>
+  <div class="swal-ripple-label">Success</div>
+  <div class="swal-ripple-divider"></div>
+`;
+
 
 function scrollToProject() {
     const projectSection = document.getElementById("projects");
