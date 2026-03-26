@@ -96,6 +96,11 @@ contactForm.addEventListener("submit", async function (event) {
     });
 
 // CUSTOM CURSOR
+// Disable custom cursor on touch/mobile devices
+const isTouchDevice = () => window.matchMedia('(hover: none)').matches;
+
+if (!isTouchDevice()) {
+    // Only run cursor code on non-touch devices
 const cursorDot = document.querySelector('.cursor-dot');
 const cursorRing = document.querySelector('.cursor-ring');
 
@@ -119,6 +124,11 @@ document.querySelectorAll('a, button, .skill-pill, .project-card').forEach(el =>
         cursorRing.style.opacity = '0.6';
     });
 });
+} else {
+    // Hide cursor elements entirely on mobile
+    document.querySelector('.cursor-dot').style.display = 'none';
+    document.querySelector('.cursor-ring').style.display = 'none';
+}
 
 const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
