@@ -2,11 +2,20 @@
 const BASE_URL = "https://portfolio-backend-0ekp.onrender.com";
 
 const rippleHTML = `
-  <div class="swal-ripple-icon-wrap">
-      <div class="ripple"></div>
-  </div>
-  <div class="swal-ripple-label">Success</div>
-  <div class="swal-ripple-divider"></div>
+    <div class="swal-ripple-icon-wrap">
+        <div class="swal-ripple-ring"></div>
+        <div class="swal-ripple-ring"></div>
+        <div class="swal-ripple-ring"></div>
+
+        <div class="swal-ripple-center">
+            <svg viewBox="0 0 24 24">
+                <polyline points="4 12 9 17 20 6"/>
+            </svg>
+        </div>
+    </div>
+
+    <div class="swal-ripple-label">Success</div>
+    <div class="swal-ripple-divider"></div>
 `;
 
 
