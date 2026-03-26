@@ -17,6 +17,43 @@ function scrollToProject() {
 const contactForm = document.getElementById("contactForm");
 const formMessage = document.getElementById("formMessage");
 
+// Helper — lock all form fields
+function lockForm() {
+    const submitBtn = contactForm.querySelector("button[type='submit']");
+    const nameEl = document.getElementById("name");
+    const emailEl = document.getElementById("email");
+    const msgEl = document.getElementById("message");
+
+    submitBtn.disabled = true;
+    nameEl.disabled = true;
+    emailEl.disabled = true;
+    msgEl.disabled = true;
+
+    nameEl.style.opacity = "0.5";
+    emailEl.style.opacity = "0.5";
+    msgEl.style.opacity = "0.5";
+
+    submitBtn.querySelector("span").textContent = "Sending...";
+}
+
+// Helper — unlock all form fields
+function unlockForm(btnText = "Send Message") {
+    const submitBtn = contactForm.querySelector("button[type='submit']");
+    const nameEl = document.getElementById("name");
+    const emailEl = document.getElementById("email");
+    const msgEl = document.getElementById("message");
+
+    submitBtn.disabled = false;
+    nameEl.disabled = false;
+    emailEl.disabled = false;
+    msgEl.disabled = false;
+
+    nameEl.style.opacity = "1";
+    emailEl.style.opacity = "1";
+    msgEl.style.opacity = "1";
+
+    submitBtn.querySelector("span").textContent = btnText;
+}
 
 contactForm.addEventListener("submit", async function (event) {
     event.preventDefault();
@@ -30,17 +67,13 @@ contactForm.addEventListener("submit", async function (event) {
         formMessage.style.color = "red";
         return;
     }
-     formMessage.textContent = "";
+    formMessage.textContent = "";
 
-     const submitBtn = contactForm.querySelector("button[type='submit']");
-     submitBtn.textContent = "Sending...";
-     submitBtn.disabled = true;
+    lockForm(); //lock field on submit
 
-    const data = {
-        name,
-        email,
-        message
-    }
+
+    const data = { name, email, message }
+
 
     const dataPacket = {
         method: "POST",
@@ -62,38 +95,57 @@ contactForm.addEventListener("submit", async function (event) {
         const result = await response.json();
         console.log("saved:", result);
 
-        submitBtn.textContent = "Send Message";
-        submitBtn.disabled = false;
-
+        unlockForm("Send Message");
         contactForm.reset();
 
-        //sweet alert
         Swal.fire({
-            icon: "success",
-            title: "Message Sent! 🎉",
-            text: "Thanks for reaching out, I'll get back to you soon!",
-            confirmButtonText: "Awesome!",
-            confirmButtonColor: "#2563eb",
-            timer: 4000,
-            timerProgressBar: true,
+            title: 'Message Sent',
+            html: `
+        ${rippleHTML}
+        <p>Thanks for reaching out — I read every message and will get back to you soon.</p>
+    `,
             showClass: {
-                popup: "animate__animated animate__fadeInDown"
+                popup: ''   /* disable default swal animation — we handle it */
             },
             hideClass: {
-                popup: "animate__animated animate__fadeOutUp"
+                popup: 'animate__animated animate__fadeOutUp animate__faster'
+            },
+            customClass: {
+                popup: 'swal-ripple-popup',
+                backdrop: 'swal-ripple-backdrop',
+                title: 'swal2-title',
+                htmlContainer: 'swal2-html-container',
+                confirmButton: 'swal2-confirm',
+                actions: 'swal2-actions',
+            },
+            confirmButtonText: 'Perfect!',
+            timer: 5000,
+            timerProgressBar: true,
+            showConfirmButton: true,
+            allowOutsideClick: true,
+            didOpen: (popup) => {
+                /* inject icon above the title inside the header */
+                const header = popup.querySelector('.swal2-header');
+                const iconWrap = popup.querySelector('.swal-ripple-icon-wrap');
+                const label = popup.querySelector('.swal-ripple-label');
+                const divider = popup.querySelector('.swal-ripple-divider');
+                if (header && iconWrap) {
+                    header.prepend(divider);
+                    header.prepend(label);
+                    header.prepend(iconWrap);
+                }
             }
         });
 
     } catch (error) {
         console.log("Error", error)
 
-        submitBtn.textContent = "Send Message";
-        submitBtn.disabled = false;
+        unlockForm("Send Message");
 
         formMessage.textContent = "⚠️ Something went wrong. Please try again or email me directly.";
         formMessage.style.color = "#dc2626";
     }
-    });
+});
 
 // CUSTOM CURSOR
 // Disable custom cursor on touch/mobile devices
@@ -101,29 +153,29 @@ const isTouchDevice = () => window.matchMedia('(hover: none)').matches;
 
 if (!isTouchDevice()) {
     // Only run cursor code on non-touch devices
-const cursorDot = document.querySelector('.cursor-dot');
-const cursorRing = document.querySelector('.cursor-ring');
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorRing = document.querySelector('.cursor-ring');
 
-window.addEventListener('mousemove', (e) => {
-    // ✅ correct positioning using left/top not transform
-    cursorDot.style.left = e.clientX + 'px';
-    cursorDot.style.top = e.clientY + 'px';
-    cursorRing.style.left = e.clientX + 'px';
-    cursorRing.style.top = e.clientY + 'px';
-});
+    window.addEventListener('mousemove', (e) => {
+        // ✅ correct positioning using left/top not transform
+        cursorDot.style.left = e.clientX + 'px';
+        cursorDot.style.top = e.clientY + 'px';
+        cursorRing.style.left = e.clientX + 'px';
+        cursorRing.style.top = e.clientY + 'px';
+    });
 
-document.querySelectorAll('a, button, .skill-pill, .project-card').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        cursorRing.style.width = '50px';
-        cursorRing.style.height = '50px';
-        cursorRing.style.opacity = '0.3';
+    document.querySelectorAll('a, button, .skill-pill, .project-card').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursorRing.style.width = '50px';
+            cursorRing.style.height = '50px';
+            cursorRing.style.opacity = '0.3';
+        });
+        el.addEventListener('mouseleave', () => {
+            cursorRing.style.width = '32px';
+            cursorRing.style.height = '32px';
+            cursorRing.style.opacity = '0.6';
+        });
     });
-    el.addEventListener('mouseleave', () => {
-        cursorRing.style.width = '32px';
-        cursorRing.style.height = '32px';
-        cursorRing.style.opacity = '0.6';
-    });
-});
 } else {
     // Hide cursor elements entirely on mobile
     document.querySelector('.cursor-dot').style.display = 'none';
@@ -138,13 +190,13 @@ window.addEventListener('scroll', () => {
 const heroName = document.querySelector('.hero-name');
 
 heroName.addEventListener('mouseenter', () => {
-  heroName.classList.remove('animate');
-  void heroName.offsetWidth; // force reflow
-  heroName.classList.add('animate');
+    heroName.classList.remove('animate');
+    void heroName.offsetWidth; // force reflow
+    heroName.classList.add('animate');
 });
 
 const hamburger = document.getElementById('hamburger');
-const navLinks  = document.getElementById('nav-links');
+const navLinks = document.getElementById('nav-links');
 
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('open');
