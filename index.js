@@ -118,6 +118,7 @@ contactForm.addEventListener("submit", async function (event) {
 
         Swal.fire({
             title: 'Message Sent',
+
             html: `
         ${rippleHTML}
         <p>Thanks for reaching out — I read every message and will get back to you soon.</p>
@@ -141,6 +142,8 @@ contactForm.addEventListener("submit", async function (event) {
             timerProgressBar: true,
             showConfirmButton: true,
             allowOutsideClick: true,
+
+
             didOpen: (popup) => {
                 /* inject icon above the title inside the header */
                 const header = popup.querySelector('.swal2-header');
@@ -152,6 +155,10 @@ contactForm.addEventListener("submit", async function (event) {
                     header.prepend(label);
                     header.prepend(iconWrap);
                 }
+                setTimeout(() => {
+                    Swal.close();
+                }, 5000);
+
             }
         });
 
