@@ -197,7 +197,7 @@ body::after {
 
 .nav-links a {
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 1000;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--muted);
@@ -1812,7 +1812,7 @@ body::after {
     max-width: 380px !important;
     width: 100% !important;
     box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(201, 169, 110, 0.1) !important;
-    animation: swalPopIn 0.6s cubic-bezier(0.34, 1.2, 0.64, 1) forwards !important;
+    animation: swalPopIn 0.6s cubic-bezier(0.34, 1.2, 0.64, 1) !important;
     overflow: visible !important;
 }
 
@@ -1931,6 +1931,10 @@ body::after {
     margin: 0 0 4px !important;
     line-height: 1.2 !important;
     animation: fadeUp 0.5s ease 0.6s both;
+    display: none !important;
+}
+.swal-ripple-popup.swal2-popup {
+    overflow: visible !important;
 }
 
 /* Divider line */
@@ -1951,6 +1955,11 @@ body::after {
     margin: 0 0 8px !important;
     padding: 0 !important;
     animation: fadeUp 0.5s ease 0.7s both;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+    overflow: visible !important;
 }
 
 /* Actions container */
