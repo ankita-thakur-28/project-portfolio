@@ -134,15 +134,21 @@ contactForm.addEventListener("submit", async function (event) {
             showConfirmButton: true,
             allowOutsideClick: true,    /* ← click outside to close */
             allowEscapeKey: true,
-            willClose: (popup) => {
-                /* ← strip animation so SweetAlert can close freely */
-                popup.style.animation = 'none';
-                popup.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
-                popup.style.opacity = '0';
-                popup.style.transform = 'scale(0.92) translateY(-8px)';
+            backdrop: true,
+            didOpen: () => {
+                /* force pointer events on the swal2 container so clicks reach backdrop */
+                const container = document.querySelector('.swal2-container');
+                if (container) {
+                    container.style.pointerEvents = 'auto';
+                    container.style.zIndex = '99999';
+                }
+            },
+            willClose: () => {
+                const container = document.querySelector('.swal2-container');
+                if (container) container.style.pointerEvents = 'none';
             }
-
         });
+
 
     } catch (error) {
         console.log("Error", error)

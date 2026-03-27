@@ -1797,76 +1797,68 @@ body::after {
    SWEETALERT — CINEMATIC RIPPLE RINGS
 ═══════════════════════════════════════════════ */
 
-/* Backdrop */
-.swal-ripple-backdrop {
+/* ═══════════════════════════════════════════════
+   SWEETALERT — CINEMATIC RIPPLE RINGS
+═══════════════════════════════════════════════ */
+
+/* Container — must allow pointer events */
+.swal2-container.swal-ripple-backdrop {
     background: rgba(13, 11, 8, 0.85) !important;
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px) !important;
+    pointer-events: auto !important;
+    z-index: 99999 !important;
 }
 
-/* Main popup */
+/* Popup */
 .swal-ripple-popup {
     background: #0d0b08 !important;
     border: 1px solid rgba(201, 169, 110, 0.2) !important;
     border-radius: 24px !important;
-    padding: 40px 32px 32px !important;
+    padding: 36px 28px 28px !important;
     max-width: 380px !important;
-    width: 100% !important;
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(201, 169, 110, 0.1) !important;
-    animation: swalPopIn 0.6s cubic-bezier(0.34, 1.2, 0.64, 1) !important;
+    width: 90% !important;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6) !important;
     overflow: visible !important;
 }
 
-@keyframes swalPopIn {
-    0%   { transform: scale(0.85) translateY(20px); opacity: 0; }
-    100% { transform: scale(1) translateY(0);        opacity: 1; }
-}
+/* Hide all default swal elements */
+.swal-ripple-popup .swal2-icon,
+.swal-ripple-popup .swal2-title,
+.swal-ripple-popup .swal2-header { display: none !important; }
 
-/* Hide default swal icon completely */
-.swal-ripple-popup .swal2-icon {
-    display: none !important;
-}
-
-/* Hide default title spacing */
-.swal-ripple-popup .swal2-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 !important;
+/* html container — our entire content lives here */
+.swal-ripple-popup .swal2-html-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
     margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    font-size: 13px !important;
+    color: rgba(255, 255, 255, 0.38) !important;
+    font-family: 'DM Sans', sans-serif !important;
 }
 
-/* Custom icon container — holds rings + center */
+/* Ripple icon wrap */
 .swal-ripple-icon-wrap {
     position: relative;
-    width: 90px;
-    height: 90px;
-    margin: 0 auto 20px;
+    width: 86px;
+    height: 86px;
+    margin-bottom: 8px;
+    flex-shrink: 0;
 }
 
-/* Three ripple rings */
+/* Rings */
 .swal-ripple-ring {
     position: absolute;
     border-radius: 50%;
     border: 1px solid rgba(201, 169, 110, 0.2);
     animation: ripplePulse 2.4s ease-out infinite;
 }
-
-.swal-ripple-ring:nth-child(1) {
-    inset: 22px;
-    animation-delay: 0s;
-}
-
-.swal-ripple-ring:nth-child(2) {
-    inset: 10px;
-    border-color: rgba(201, 169, 110, 0.3);
-    animation-delay: 0.4s;
-}
-
-.swal-ripple-ring:nth-child(3) {
-    inset: 0;
-    border-color: rgba(201, 169, 110, 0.15);
-    animation-delay: 0.8s;
-}
+.swal-ripple-ring:nth-child(1) { inset: 22px; animation-delay: 0s; }
+.swal-ripple-ring:nth-child(2) { inset: 10px; border-color: rgba(201,169,110,0.3); animation-delay: 0.4s; }
+.swal-ripple-ring:nth-child(3) { inset: 0;    border-color: rgba(201,169,110,0.15); animation-delay: 0.8s; }
 
 @keyframes ripplePulse {
     0%   { transform: scale(0.85); opacity: 0; }
@@ -1874,7 +1866,7 @@ body::after {
     100% { transform: scale(1.55); opacity: 0; }
 }
 
-/* Center gold circle with checkmark */
+/* Gold center circle */
 .swal-ripple-center {
     position: absolute;
     inset: 20px;
@@ -1892,24 +1884,23 @@ body::after {
     100% { transform: scale(1); opacity: 1; }
 }
 
+/* Checkmark draw */
 .swal-ripple-center svg {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     stroke: #0d0b08;
     stroke-width: 2.8;
     fill: none;
     stroke-linecap: round;
     stroke-linejoin: round;
-    stroke-dasharray: 30;
-    stroke-dashoffset: 30;
-    animation: drawCheck 0.5s ease 0.6s forwards;
+    stroke-dasharray: 28;
+    stroke-dashoffset: 28;
+    animation: drawCheck 0.45s ease 0.6s forwards;
 }
 
-@keyframes drawCheck {
-    to { stroke-dashoffset: 0; }
-}
+@keyframes drawCheck { to { stroke-dashoffset: 0; } }
 
-/* Badge label above title */
+/* Label */
 .swal-ripple-label {
     font-family: 'DM Sans', sans-serif;
     font-size: 9px;
@@ -1917,60 +1908,48 @@ body::after {
     letter-spacing: 0.26em;
     text-transform: uppercase;
     color: rgba(201, 169, 110, 0.6);
-    text-align: center;
-    animation: fadeUp 0.5s ease 0.5s both;
+    animation: fadeUp 0.4s ease 0.5s both;
 }
 
-/* Title */
-.swal-ripple-popup .swal2-title {
-    font-family: 'Cormorant Garamond', serif !important;
-    font-size: 26px !important;
-    font-weight: 300 !important;
-    color: #fff !important;
-    padding: 0 !important;
-    margin: 0 0 4px !important;
-    line-height: 1.2 !important;
-    animation: fadeUp 0.5s ease 0.6s both;
-    display: none !important;
-}
-.swal-ripple-popup.swal2-popup {
-    overflow: visible !important;
-}
-
-/* Divider line */
+/* Divider */
 .swal-ripple-divider {
     width: 40px;
     height: 1px;
     background: linear-gradient(90deg, transparent, #c9a96e, transparent);
-    margin: 8px auto;
-    animation: fadeUp 0.5s ease 0.65s both;
+    animation: fadeUp 0.4s ease 0.55s both;
+}
+
+/* Title inside html */
+.swal-ripple-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.2;
+    animation: fadeUp 0.4s ease 0.6s both;
 }
 
 /* Body text */
-.swal-ripple-popup .swal2-html-container {
-    font-family: 'DM Sans', sans-serif !important;
-    font-size: 13px !important;
-    color: rgba(255, 255, 255, 0.38) !important;
-    line-height: 1.7 !important;
-    margin: 0 0 8px !important;
-    padding: 0 !important;
-    animation: fadeUp 0.5s ease 0.7s both;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 8px !important;
-    overflow: visible !important;
+.swal-ripple-body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.38);
+    line-height: 1.7;
+    text-align: center;
+    padding: 0 4px;
+    animation: fadeUp 0.4s ease 0.7s both;
+    margin: 0;
 }
 
-/* Actions container */
+/* Actions */
 .swal-ripple-popup .swal2-actions {
-    margin: 8px 0 0 !important;
+    margin: 10px 0 0 !important;
     padding: 0 !important;
-    animation: fadeUp 0.5s ease 0.8s both;
+    animation: fadeUp 0.4s ease 0.8s both;
 }
 
 /* Confirm button */
-.swal-ripple-popup .swal2-confirm {
+.swal-ripple-btn {
     font-family: 'DM Sans', sans-serif !important;
     font-size: 11px !important;
     font-weight: 500 !important;
@@ -1983,17 +1962,11 @@ body::after {
     color: #0d0b08 !important;
     box-shadow: none !important;
     transition: transform 0.2s ease, box-shadow 0.2s ease !important;
-    position: relative !important;
-    overflow: hidden !important;
 }
 
-.swal-ripple-popup .swal2-confirm:hover {
+.swal-ripple-btn:hover {
     transform: translateY(-2px) !important;
     box-shadow: 0 8px 24px rgba(201, 169, 110, 0.3) !important;
-}
-
-.swal-ripple-popup .swal2-confirm:active {
-    transform: translateY(0) !important;
 }
 
 /* Timer progress bar */
@@ -2002,14 +1975,12 @@ body::after {
     overflow: hidden !important;
 }
 
-.swal-ripple-popup .swal2-timer-progress-bar {
+.swal-ripple-timer {
     background: linear-gradient(90deg, #c9a96e, #e8c98a, #a6813f) !important;
     height: 3px !important;
 }
 
 @keyframes fadeUp {
-    0%   { opacity: 0; transform: translateY(10px); }
+    0%   { opacity: 0; transform: translateY(8px); }
     100% { opacity: 1; transform: translateY(0); }
 }
-
-    
