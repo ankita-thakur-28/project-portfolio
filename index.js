@@ -128,10 +128,10 @@ contactForm.addEventListener("submit", async function (event) {
                 backdrop: 'swal-ripple-backdrop',
                 confirmButton: 'swal2-confirm',
             },
-            confirmButtonText: 'Perfect!',
+            // confirmButtonText: 'Perfect!',
             timer: 5000,
             timerProgressBar: true,
-            showConfirmButton: true,
+            showConfirmButton: false,
             allowOutsideClick: true,    /* ← click outside to close */
             allowEscapeKey: true,
             backdrop: true,
