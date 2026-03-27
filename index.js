@@ -132,8 +132,8 @@ contactForm.addEventListener("submit", async function (event) {
             timer: 5000,
             timerProgressBar: true,
             showConfirmButton: false,
-            allowOutsideClick: true,    /* ← click outside to close */
-            allowEscapeKey: true,
+            allowOutsideClick: false,    /* ← click outside to close */
+            allowEscapeKey: false,
             backdrop: true,
             didOpen: () => {
                 /* force pointer events on the swal2 container so clicks reach backdrop */

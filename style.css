@@ -1943,6 +1943,7 @@ body::after {
 
 /* Actions */
 .swal-ripple-popup .swal2-actions {
+    display: none !important;
     margin: 10px 0 0 !important;
     padding: 0 !important;
     animation: fadeUp 0.4s ease 0.8s both;
