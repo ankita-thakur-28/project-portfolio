@@ -1204,6 +1204,60 @@ body::after {
     }
 }
 
+/* Fix 1: AOS flattening the 3D context on iOS */
+[data-aos] .cert-flip-card,
+[data-aos].cert-flip-scene {
+    -webkit-transform-style: preserve-3d !important;
+    transform-style: preserve-3d !important;
+}
+
+/* Fix 2: Nuclear option for mobile — bypass 3D entirely */
+@media (max-width: 768px) {
+    .cert-flip-scene {
+        perspective: none;
+    }
+
+    .cert-flip-card {
+        transform-style: flat !important;
+        -webkit-transform-style: flat !important;
+        transition: none!important;
+        transform: none !important;
+        -webkit-transform: none !important;;
+    }
+
+     .cert-flip-card.flipped {
+        transform: none !important;
+        -webkit-transform: none !important;
+    }
+
+    .cert-flip-card .cert-flip-front,
+    .cert-flip-card .cert-flip-back {
+        backface-visibility: visible !important;
+        -webkit-backface-visibility: visible !important;
+        transform: none !important;
+        -webkit-transform: none !important;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+
+    .cert-flip-card .cert-flip-back {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .cert-flip-card.flipped .cert-flip-front {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .cert-flip-card.flipped .cert-flip-back {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+    }
+}
+
 /* ═══════════════════════════════════════════════
    PROJECTS
 ═══════════════════════════════════════════════ */
