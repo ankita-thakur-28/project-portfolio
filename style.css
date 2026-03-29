@@ -166,7 +166,21 @@ body::after {
 }
 
 /* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  line-height: 0; /* prevents phantom spacing below SVG */
+}
 
+.logo svg {
+  transition: transform 0.28s ease, filter 0.28s ease;
+}
+
+.logo:hover svg {
+  transform: scale(1.09);
+  filter: drop-shadow(0 0 10px rgba(201, 169, 110, 0.45));
+}
 /* Nav links */
 .nav-links {
     list-style: none;
