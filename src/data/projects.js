@@ -1,0 +1,40 @@
+export const projects = [
+  {
+    id: 'aibt',
+    status: 'Live',
+    title: 'AI-Bug Tracker (AIBT)',
+    subtitle: 'Role-based bug tracking with AI-generated test scripts',
+    desc: 'Built for teams that need more than a ticket list. AIBT gives Admins, Developers, and Testers dedicated workflows, auto-generates test scripts from bug reports, and keeps everyone in the loop with automated email alerts — backed by a full Playwright test suite.',
+    features: [
+      'Role-based access control for Admin, Developer, and Tester',
+      'AI-generated test scripts from bug descriptions',
+      'Automated email notifications via Brevo',
+    ],
+    tags: ['Spring Boot', 'React', 'PostgreSQL', 'Playwright', 'JWT', 'Brevo API'],
+    liveUrl: 'https://ai-bug-tracker-git-main-aibt1.vercel.app/login',
+    repoUrl: 'https://github.com/ankita-thakur-28/AI-Bug-Tracker',
+  },
+  {
+    id: 'project-2',
+    status: 'In Progress',
+    title: 'Upcoming Project',
+    subtitle: 'Full-stack application',
+    desc: 'An exciting new application currently under development.',
+    features: ['Modern tech stack', 'Responsive design'],
+    tags: ['React', 'Node.js', 'Tailwind'],
+    liveUrl: '',
+    repoUrl: 'https://github.com/ankita-thakur-28',
+  },
+  {
+    id: 'project-3',
+    status: 'In Progress',
+    title: 'Upcoming Project',
+    subtitle: 'Cloud & AI Solution',
+    desc: 'An AI-powered cloud automation tool coming soon.',
+    features: ['AI Integration', 'Cloud Architecture'],
+    tags: ['Python', 'FastAPI', 'Docker'],
+    liveUrl: '',
+    repoUrl: 'https://github.com/ankita-thakur-28',
+  },
+];
+
