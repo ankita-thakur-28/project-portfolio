@@ -1,3 +1,6 @@
+import istqbImg from '../assets/istqb.jpg';
+import postmanImg from '../assets/postman.jpg';
+
 export const certifications = [
   {
     id: 'istqb',
@@ -7,7 +10,7 @@ export const certifications = [
     org: 'International Software Testing Qualifications Board',
     certId: 'CTFL-149724 · India',
     tags: ['Software Testing', 'QA', 'Test Design'],
-    image: '/istqb.jpg',
+    image: istqbImg,
     verifyUrl: null,
     accent: 'teal',
   },
@@ -19,7 +22,7 @@ export const certifications = [
     org: 'Postman Academy',
     certId: 'Issued: Nov 3, 2025',
     tags: ['API Testing', 'REST', 'Postman'],
-    image: '/postman.jpg',
+    image: postmanImg,
     verifyUrl: 'https://verify.skilljar.com/c/2n5vv8tkva3h',
     accent: 'orange',
   },

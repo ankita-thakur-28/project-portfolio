@@ -1,3 +1,5 @@
+import profileImg from '../assets/img-1.jpeg';
+
 export default function Home({ onNavigate }) {
   return (
     <div className="h-full w-full overflow-hidden p-4 sm:p-6 flex items-center justify-center">
@@ -33,7 +35,7 @@ export default function Home({ onNavigate }) {
               <i className="fas fa-arrow-right text-xs"></i>
             </button>
             <a
-              href="/Ankita_Kumari_CV.pdf"
+              href={`${import.meta.env.BASE_URL}Ankita_Kumari_CV.pdf`}
               download
               target="_blank"
               rel="noopener noreferrer"
@@ -82,7 +84,7 @@ export default function Home({ onNavigate }) {
 
             <div className="relative w-56 h-76 sm:w-64 sm:h-84 rounded-2xl overflow-hidden border-2 border-orange-500/40 shadow-2xl bg-[#121212]">
               <img
-                src="assets/img-1.jpeg"
+                src={profileImg}
                 alt="Ankita Kumari"
                 className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
               />
