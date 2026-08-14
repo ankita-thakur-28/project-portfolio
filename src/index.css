@@ -50,3 +50,69 @@
     background: #f97316;
   }
 }
+
+/* Cassie Evans Style Calligraphy Stroke Reveal */
+@keyframes writeCalligraphy {
+  0% {
+    stroke-dashoffset: 350;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+/* Cassie Evans Style Squash & Physics Bounce for Dot */
+@keyframes cassieBounce {
+  0% {
+    transform: translateY(-80px) scale(1, 1.4);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(0px) scale(1.4, 0.6); /* Impact Squash */
+  }
+  65% {
+    transform: translateY(-22px) scale(0.9, 1.2); /* First Rebound */
+  }
+  80% {
+    transform: translateY(0px) scale(1.15, 0.85); /* Second Touch */
+  }
+  90% {
+    transform: translateY(-6px) scale(0.98, 1.05); /* Settle Rebound */
+  }
+  100% {
+    transform: translateY(0px) scale(1, 1); /* Rest */
+    opacity: 1;
+  }
+}
+
+.ankita-stroke {
+  stroke-dasharray: 350;
+  stroke-dashoffset: 0;
+  animation: writeCalligraphy 1.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.path-A1 { animation-delay: 0.05s; }
+.path-A2 { animation-delay: 0.25s; }
+.path-n  { animation-delay: 0.38s; }
+.path-k  { animation-delay: 0.52s; }
+.path-i  { animation-delay: 0.68s; }
+.path-t  { animation-delay: 0.80s; }
+.path-a  { animation-delay: 0.95s; }
+
+.path-A1-accent { animation-delay: 0.15s; }
+.path-n-accent  { animation-delay: 0.45s; }
+.path-k-accent  { animation-delay: 0.60s; }
+.path-a-accent  { animation-delay: 1.05s; }
+
+.ankita-dot-group {
+  transform-origin: 182px 30px;
+  animation: cassieBounce 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) 0.72s both;
+}

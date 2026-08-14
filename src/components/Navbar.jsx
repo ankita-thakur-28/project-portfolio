@@ -19,21 +19,8 @@ export default function Navbar({ activeSection, onNavigate }) {
 
   return (
     <header className="sticky top-0 z-50 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-[#262626] shrink-0">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
-        {/* Logo with Fraunces Italic accent */}
-        <button
-          onClick={() => handleNavClick('home')}
-          className="flex items-center gap-2 group cursor-pointer focus:outline-none"
-        >
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center font-heading italic text-sm text-white shadow-md shadow-orange-950/40 group-hover:scale-105 transition-transform">
-            AK
-          </div>
-          <span className="font-heading italic text-lg text-white group-hover:text-orange-400 transition-colors">
-            Ankita<span className="text-orange-500 font-sans not-italic">.</span>
-          </span>
-        </button>
-
-        {/* Desktop Navigation */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-center relative">
+        {/* Desktop Navigation - Centered with Original Underline & Hover Style */}
         <nav className="hidden md:flex items-center gap-1">
           {NAV_ITEMS.map((item) => {
             const isActive = activeSection === item.id;
@@ -59,7 +46,7 @@ export default function Navbar({ activeSection, onNavigate }) {
         {/* Mobile Hamburger Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-[#121212] cursor-pointer focus:outline-none"
+          className="md:hidden absolute right-4 p-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-[#121212] cursor-pointer focus:outline-none"
           aria-label="Toggle menu"
         >
           <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">

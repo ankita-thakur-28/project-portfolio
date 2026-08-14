@@ -42,7 +42,7 @@ export default function About({ onNavigate }) {
             </h3>
             <div>
               <div className="text-sm sm:text-base font-semibold text-white">Master of Computer Applications (MCA)</div>
-              <div className="text-xs sm:text-sm text-slate-400">Computer Science & Software Systems</div>
+              <div className="text-xs sm:text-sm text-slate-400">Sikkim Manipal University</div>
             </div>
             
             <hr className="border-[#262626]" />
