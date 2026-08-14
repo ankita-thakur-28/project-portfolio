@@ -1,4 +1,5 @@
 import { projects } from '../data/projects';
+import TechIcon from '../components/TechIcon';
 
 export default function Project() {
   return (
@@ -114,15 +115,16 @@ export default function Project() {
                   </div>
                 </div>
 
-                {/* Tech Tags */}
-                <div className="flex flex-wrap gap-1.5 pt-2">
+                {/* Tech Tags with Icons */}
+                <div className="flex flex-wrap gap-2 pt-2">
                   {project.tags.map((tag, i) => (
-                    <span
+                    <div
                       key={i}
-                      className="px-2 py-0.5 rounded bg-[#0a0a0a] text-slate-300 text-[11px] font-mono border border-[#262626]"
+                      title={tag}
+                      className="w-8 h-8 rounded-lg bg-[#0a0a0a] hover:bg-[#181818] border border-[#262626] hover:border-rose-500/40 flex items-center justify-center transition-all hover:scale-105 group cursor-pointer"
                     >
-                      {tag}
-                    </span>
+                      <TechIcon name={tag} size="sm" />
+                    </div>
                   ))}
                 </div>
               </div>

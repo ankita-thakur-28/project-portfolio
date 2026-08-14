@@ -1,4 +1,5 @@
 import { skills } from '../data/skills';
+import TechIcon from '../components/TechIcon';
 
 export default function About({ onNavigate }) {
   return (
@@ -65,12 +66,13 @@ export default function About({ onNavigate }) {
 
           <div className="flex flex-wrap gap-3">
             {skills.map((skill, index) => (
-              <span
+              <div
                 key={index}
-                className="px-4 py-2 rounded-lg bg-[#121212] hover:bg-[#1e1e1e] border border-[#262626] text-orange-300 font-medium text-xs sm:text-sm shadow-sm transition hover:border-orange-500/40"
+                title={skill}
+                className="w-12 h-12 rounded-xl bg-[#121212] hover:bg-[#1a1a1a] border border-[#262626] hover:border-orange-500/50 flex items-center justify-center shadow-md transition-all hover:scale-105 group cursor-pointer"
               >
-                {skill}
-              </span>
+                <TechIcon name={skill} size="lg" />
+              </div>
             ))}
           </div>
         </div>
