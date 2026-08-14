@@ -19,6 +19,12 @@ export default function TechIcon({ name, size = 'md', showLabel = false, classNa
       case 'postgresql':
       case 'postgres':
         return <i className={`devicon-postgresql-plain colored ${iconSizeClass}`}></i>;
+      case 'html':
+      case 'html5':
+        return <i className={`devicon-html5-plain colored ${iconSizeClass}`}></i>;
+      case 'css':
+      case 'css3':
+        return <i className={`devicon-css3-plain colored ${iconSizeClass}`}></i>;
       case 'html / css':
       case 'html/css':
         return (
