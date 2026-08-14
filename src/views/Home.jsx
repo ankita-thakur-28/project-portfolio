@@ -22,7 +22,7 @@ export default function Home({ onNavigate }) {
           </div>
 
           <p className="text-slate-300 font-light text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
-            Mastering the craft of Java & Spring Boot backends, AI-powered automation, and system reliability with an uncompromising quality-first mindset.
+            Building high-performance Java & Spring Boot backends, AI-powered automation, and resilient web systems with an uncompromising quality-first mindset.
           </p>
 
           {/* CTA Buttons */}
