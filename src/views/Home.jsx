@@ -79,10 +79,10 @@ export default function Home({ onNavigate }) {
           <div className="relative group">
             {/* Ambient Background Glow */}
             <div className="absolute -inset-1 bg-gradient-to-r from-orange-600 to-orange-400 rounded-2xl blur-xl opacity-30 group-hover:opacity-60 transition duration-500"></div>
-            
+
             <div className="relative w-56 h-76 sm:w-64 sm:h-84 rounded-2xl overflow-hidden border-2 border-orange-500/40 shadow-2xl bg-[#121212]">
               <img
-                src="/img-1.jpeg"
+                src="assets/img-1.jpeg"
                 alt="Ankita Kumari"
                 className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
               />
