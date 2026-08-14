@@ -1,4 +1,4 @@
-export default function TechIcon({ name, size = 'md', showLabel = false, className = '' }) {
+export default function TechIcon({ name, size = 'md', showLabel = false, showTooltip = true, className = '' }) {
   const normalized = name.toLowerCase().trim();
 
   const iconSizeClass = size === 'sm' ? 'text-sm' : size === 'lg' ? 'text-2xl' : 'text-lg';
@@ -82,12 +82,20 @@ export default function TechIcon({ name, size = 'md', showLabel = false, classNa
   };
 
   return (
-    <span
+    <div
       title={name}
-      className={`inline-flex items-center justify-center transition-all ${className}`}
+      className={`relative group/tech inline-flex items-center justify-center ${className}`}
     >
       {renderIcon()}
       {showLabel && <span className="ml-1.5 text-xs text-slate-300 font-mono">{name}</span>}
-    </span>
+
+      {/* Instant Floating Tooltip */}
+      {showTooltip && (
+        <div className="absolute -top-8.5 left-1/2 -translate-x-1/2 opacity-0 invisible group-hover/tech:opacity-100 group-hover/tech:visible -translate-y-1 group-hover/tech:translate-y-0 transition-all duration-150 pointer-events-none z-50 whitespace-nowrap bg-[#1a1a1a] text-slate-200 text-[11px] font-medium px-2.5 py-0.5 rounded-md border border-[#333] shadow-xl shadow-black/80 flex items-center">
+          <span>{name}</span>
+          <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[#1a1a1a] border-r border-b border-[#333] rotate-45"></span>
+        </div>
+      )}
+    </div>
   );
 }

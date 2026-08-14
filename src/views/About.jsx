@@ -15,13 +15,13 @@ export default function About({ onNavigate }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="md:col-span-2 space-y-4 text-slate-300 leading-relaxed text-base sm:text-lg font-light">
             <p>
-              I am an <strong className="text-white font-medium">MCA student</strong> and <strong className="text-white font-medium">Full-Stack Developer</strong> specializing in Java, Spring Boot backends, and AI-driven applications.
+              I am a <strong className="text-white font-medium">Full-Stack Developer</strong> specializing in robust <strong className="text-white font-medium">Java & Spring Boot</strong> architectures and <strong className="text-white font-medium">AI-driven workflows</strong>.
             </p>
             <p>
-              Backed by <span className="text-orange-400 font-normal">ISTQB Foundation Level Certification</span> and the <span className="text-orange-400 font-normal">Postman API Path</span>, I build resilient software—from real-time WebSocket monitors to automated AI test generation tools.
+              Backed by an <strong className="text-white font-medium">MCA background</strong>, <span className="text-orange-400 font-normal">ISTQB certification</span>, and the <span className="text-orange-400 font-normal">Postman API Path</span>, I focus on building software that doesn't just work—it scales reliably.
             </p>
             <p>
-              Whether designing microservices or optimizing APIs, I blend engineering rigor with automated testing to deliver high-performance, well-architected applications.
+              Whether designing microservices, implementing real-time WebSockets, or automating end-to-end testing with Playwright, I blend engineering rigor with clean, maintainable code.
             </p>
 
             <div className="pt-2">
@@ -64,11 +64,10 @@ export default function About({ onNavigate }) {
             <i className="fas fa-code text-orange-400"></i> Skills & Technologies
           </h3>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3 pt-2">
             {skills.map((skill, index) => (
               <div
                 key={index}
-                title={skill}
                 className="w-12 h-12 rounded-xl bg-[#121212] hover:bg-[#1a1a1a] border border-[#262626] hover:border-orange-500/50 flex items-center justify-center shadow-md transition-all hover:scale-105 group cursor-pointer"
               >
                 <TechIcon name={skill} size="lg" />
