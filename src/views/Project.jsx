@@ -120,7 +120,6 @@ export default function Project() {
                   {project.tags.map((tag, i) => (
                     <div
                       key={i}
-                      title={tag}
                       className="w-8 h-8 rounded-lg bg-[#0a0a0a] hover:bg-[#181818] border border-[#262626] hover:border-rose-500/40 flex items-center justify-center transition-all hover:scale-105 group cursor-pointer"
                     >
                       <TechIcon name={tag} size="sm" />
